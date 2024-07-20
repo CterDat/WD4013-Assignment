@@ -65,186 +65,13 @@
 
             @if ($showBanner)
                 @include('frontend.header.banner')
+                @include('frontend.header.welcome')
+
+                @include('frontend.header.cats')
             @endif
-
-            {{-- @include('frontend.header.welcome') --}}
-
-            {{-- @include('frontend.header.cats') --}}
-
-            {{-- <div class="products-container appear-animate" data-animation-name="fadeIn" data-animation-delay="200">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-6 col-md-4 col-xl-3">
-                            <div class="product-default inner-quickview inner-icon">
-                                <figure>
-                                    <a href="demo23-product.html">
-                                        <img src="{{ asset('images/demoes/demo23/products/product-5.jpg') }}"
-                                            width="217" height="217" alt="product">
-                                    </a>
-                                    <div class="label-group">
-                                        <div class="product-label label-hot">HOT</div>
-                                    </div>
-                                    <div class="btn-icon-group">
-                                        <a href="#" title="Add To Cart"
-                                            class="btn-icon btn-add-cart product-type-simple"><i
-                                                class="icon-shopping-cart"></i></a>
-                                    </div>
-                                    <a href="ajax/product-quick-view.html" class="btn-quickview"
-                                        title="Quick View">Quick
-                                        View</a>
-                                </figure>
-                                <div class="product-details">
-                                    <div class="category-wrap">
-                                        <div class="category-list">
-                                            <a href="demo23-shop.html" class="product-category">category</a>
-                                        </div>
-                                        <a href="wishlist.html" title="Add to Wishlist" class="btn-icon-wish"><i
-                                                class="icon-heart"></i></a>
-                                    </div>
-                                    <h3 class="product-title">
-                                        <a href="demo23-product.html">Smart Watches</a>
-                                    </h3>
-                                    <div class="ratings-container">
-                                        <div class="product-ratings">
-                                            <span class="ratings" style="width:80%"></span><!-- End .ratings -->
-                                            <span class="tooltiptext tooltip-top"></span>
-                                        </div><!-- End .product-ratings -->
-                                    </div><!-- End .product-container -->
-                                    <div class="price-box">
-                                        <span class="product-price">$299.00</span>
-                                    </div><!-- End .price-box -->
-                                </div><!-- End .product-details -->
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4 col-xl-3">
-                            <div class="product-default inner-quickview inner-icon">
-                                <figure>
-                                    <a href="demo23-product.html">
-                                        <img src="{{ asset('images/demoes/demo23/products/product-6.jpg') }}"
-                                            width="217" height="217" alt="product">
-                                        <img src="{{ asset('images/demoes/demo23/products/product-9.jpg') }}"
-                                            width="217" height="217" alt="product">
-                                    </a>
-                                    <div class="btn-icon-group">
-                                        <a href="demo23-product.html" class="btn-icon btn-add-cart"><i
-                                                class="fa fa-arrow-right"></i></a>
-                                    </div>
-                                    <a href="ajax/product-quick-view.html" class="btn-quickview"
-                                        title="Quick View">Quick
-                                        View</a>
-                                </figure>
-                                <div class="product-details">
-                                    <div class="category-wrap">
-                                        <div class="category-list">
-                                            <a href="demo23-shop.html" class="product-category">category</a>
-                                        </div>
-                                        <a href="wishlist.html" title="Add to Wishlist" class="btn-icon-wish"><i
-                                                class="icon-heart"></i></a>
-                                    </div>
-                                    <h3 class="product-title">
-                                        <a href="demo23-product.html">White Girl Shoes</a>
-                                    </h3>
-                                    <div class="ratings-container">
-                                        <div class="product-ratings">
-                                            <span class="ratings" style="width:100%"></span><!-- End .ratings -->
-                                            <span class="tooltiptext tooltip-top"></span>
-                                        </div><!-- End .product-ratings -->
-                                    </div><!-- End .product-container -->
-                                    <div class="price-box">
-                                        <span class="product-price">$299.00</span>
-                                    </div><!-- End .price-box -->
-                                </div><!-- End .product-details -->
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4 col-xl-3">
-                            <div class="product-default inner-quickview inner-icon">
-                                <figure>
-                                    <a href="demo23-product.html">
-                                        <img src="{{ asset('images/demoes/demo23/products/product-7.jpg') }}"
-                                            width="217" height="217" alt="product">
-                                    </a>
-                                    <div class="btn-icon-group">
-                                        <a href="demo23-product.html" class="btn-icon btn-add-cart"><i
-                                                class="fa fa-arrow-right"></i></a>
-                                    </div>
-                                    <a href="ajax/product-quick-view.html" class="btn-quickview"
-                                        title="Quick View">Quick
-                                        View</a>
-                                </figure>
-                                <div class="product-details">
-                                    <div class="category-wrap">
-                                        <div class="category-list">
-                                            <a href="demo23-shop.html" class="product-category">category</a>
-                                        </div>
-                                        <a href="wishlist.html" title="Add to Wishlist" class="btn-icon-wish"><i
-                                                class="icon-heart"></i></a>
-                                    </div>
-                                    <h3 class="product-title">
-                                        <a href="demo23-product.html">Rag baby doll</a>
-                                    </h3>
-                                    <div class="ratings-container">
-                                        <div class="product-ratings">
-                                            <span class="ratings" style="width:80%"></span><!-- End .ratings -->
-                                            <span class="tooltiptext tooltip-top"></span>
-                                        </div><!-- End .product-ratings -->
-                                    </div><!-- End .product-container -->
-                                    <div class="price-box">
-                                        <span class="product-price">$55.00</span>
-                                    </div><!-- End .price-box -->
-                                </div><!-- End .product-details -->
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4 col-xl-3">
-                            <div class="product-default inner-quickview inner-icon">
-                                <figure>
-                                    <a href="demo23-product.html">
-                                        <img src="{{ asset('images/demoes/demo23/products/product-4.jpg') }}"
-                                            width="217" height="217" alt="product">
-                                    </a>
-                                    <div class="label-group">
-                                        <div class="product-label label-hot">HOT</div>
-                                        <div class="product-label label-sale">-13%</div>
-                                    </div>
-                                    <div class="btn-icon-group">
-                                        <a href="#" title="Add To Cart"
-                                            class="btn-icon btn-add-cart product-type-simple"><i
-                                                class="icon-shopping-cart"></i></a>
-                                    </div>
-                                    <a href="ajax/product-quick-view.html" class="btn-quickview"
-                                        title="Quick View">Quick
-                                        View</a>
-                                </figure>
-                                <div class="product-details">
-                                    <div class="category-wrap">
-                                        <div class="category-list">
-                                            <a href="demo23-shop.html" class="product-category">category</a>
-                                        </div>
-                                        <a href="wishlist.html" title="Add to Wishlist" class="btn-icon-wish"><i
-                                                class="icon-heart"></i></a>
-                                    </div>
-                                    <h3 class="product-title">
-                                        <a href="demo23-product.html">Baby Summer Underclothes</a>
-                                    </h3>
-                                    <div class="ratings-container">
-                                        <div class="product-ratings">
-                                            <span class="ratings" style="width:0%"></span><!-- End .ratings -->
-                                            <span class="tooltiptext tooltip-top"></span>
-                                        </div><!-- End .product-ratings -->
-                                    </div><!-- End .product-container -->
-                                    <div class="price-box">
-                                        <span class="old-price">$299.00</span>
-                                        <span class="product-price">$259.00</span>
-                                    </div><!-- End .price-box -->
-                                </div><!-- End .product-details -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
 
             <div class="products-container appear-animate" data-animation-name="fadeIn" data-animation-delay="200">
                 <div class="container">
-
                     @yield('frontend-product')
 
                     {{-- end row --}}
@@ -271,7 +98,7 @@
 
 
     <!-- Main JS File -->
-    <script src="{{ asset('js/main.min.js') }}"></script>     
+    <script src="{{ asset('js/main.min.js') }}"></script>
 </body>
 
 

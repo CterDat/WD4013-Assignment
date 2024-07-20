@@ -21,6 +21,7 @@ Route::get('/', function () {
 });
 
 Route::resource('products', ProductController::class);
+Route::get('/products/layout', [ProductController::class, 'layout'])->name('products.layout');
 Route::resource('admin', AdminController::class);
 // Route::get('/admin', 'AdminController@index')->name('admin');
 

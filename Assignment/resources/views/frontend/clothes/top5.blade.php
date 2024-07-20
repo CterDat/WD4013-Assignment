@@ -1,11 +1,8 @@
 @extends('layout.master')
 @section('frontend-product')
-    <?php $showBanner = false;
-    ?>
-    @include('frontend.header.welcome')
-    <h1 class="t-align">Danh Sách Quần Áo</h1>
+    <?php $showBanner = true; ?>
     <div class="row">
-        @foreach ($listClothes as $index => $cl)
+        @foreach ($listTop5 as $index => $cl)
             <div class="col-6 col-md-4 col-xl-3">
                 <div class="product-default inner-quickview inner-icon">
 

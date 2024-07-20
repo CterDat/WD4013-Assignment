@@ -157,14 +157,14 @@
             <div class="header-center w-auto">
                 <nav class="main-nav">
                     <ul class="menu">
-                        <li class="active">
-                            <a href="demo23.html">Home</a>
+                        <li class="">
+                            <a href="{{ route('products.create') }}">Home</a>
                         </li>
                         <li class="">
                             <a href="{{ route('admin.index') }}">Admin</a>
                         </li>
                         <li>
-                            <a href="demo23-shop.html">Categories</a>
+                            <a href="{{ route('products.layout') }}">Categories</a>
                             <div class="megamenu megamenu-fixed-width megamenu-3cols">
                                 <div class="row">
                                     <div class="col-lg-4">
@@ -224,7 +224,7 @@
                             </div><!-- End .megamenu -->
                         </li>
                         <li>
-                            <a href="demo23-product.html">Products</a>
+                            <a href="{{ route('products.index') }}">Products</a>
                             <div class="megamenu megamenu-fixed-width">
                                 <div class="row">
                                     <div class="col-lg-4">

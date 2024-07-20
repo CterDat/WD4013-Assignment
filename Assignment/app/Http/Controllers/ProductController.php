@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -17,21 +18,27 @@ class ProductController extends Controller
         // return view('');
         return view('frontend.clothes.index', compact('listClothes'));
     }
-
+    public function layout()
+    {
+    }
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        $listTop5 = Product::query()->take(4)->get();
+        // return view('');
+        return view('frontend.clothes.top5', compact('listTop5'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreProductRequest $request)
+    public function store()
     {
-        //
+        $listTop5 = Product::query()->take(4)->get();
+        // return view('');
+        return view('frontend.clothes.top5', compact('listTop5'));
     }
 
     /**
