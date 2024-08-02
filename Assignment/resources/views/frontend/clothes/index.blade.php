@@ -1,5 +1,5 @@
-@extends('layout.master')
-@section('frontend-product')
+@extends('layouts.app')
+@section('content')
     <?php $showBanner = false;
     ?>
     @include('frontend.header.welcome')

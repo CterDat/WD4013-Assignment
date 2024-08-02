@@ -1,5 +1,5 @@
-@extends('layout.master')
-@section('frontend-product')
+@extends('layouts.app')
+@section('content')
     <?php $showBanner = false; ?>
     <main class="main">
         <div class="container">

@@ -8,9 +8,10 @@
                         }
                     }
                 }">
+                @foreach ($listTop3 as $item)
         <div class="home-slide home-slide-1 banner">
-            <img class="slide-bg" src="{{ asset('images/demoes/demo23/slider/slide-1.jpg') }}" alt="slider image"
-                width="1200" height="575">
+            <img class="slide-bg" src="{{ Storage::url($item->image) }}" alt="slider image"
+                width="100" height="575">
 
             <div class="banner-layer banner-layer-middle banner-layer-left">
                 <div class="container-fluid">
@@ -23,7 +24,8 @@
                 </div>
             </div>
         </div>
-        <div class="home-slide home-slide-2 banner">
+        @endforeach
+        {{-- <div class="home-slide home-slide-2 banner">
             <img class="slide-bg" src="{{ asset('images/demoes/demo23/slider/slide-2.jpg') }}" alt="slider image"
                 width="1200" height="575">
 
@@ -38,6 +40,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </section>

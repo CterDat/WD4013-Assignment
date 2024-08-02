@@ -1,5 +1,5 @@
-@extends('layout.master')
-@section('frontend-product')
+@extends('layouts.app')
+@section('content')
     <?php $showBanner = false; ?>
     <form action="{{ route('admin.store') }}" method="post" enctype="multipart/form-data">
         @csrf

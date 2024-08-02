@@ -28,19 +28,49 @@
                 <button class="mobile-menu-toggler" type="button">
                     <i class="fas fa-bars"></i>
                 </button>
-                <a href="demo23.html" class="logo">
+                <a href="/" class="logo">
                     <img src="{{ asset('images/demoes/demo23/logo.png') }}" alt="Porto Logo" width="113"
                         height="48">
                 </a>
             </div>
 
             <div class="header-right">
-                <a href="login.html" class="header-icon d-lg-block d-none">
+                
                     <div class="header-user">
                         <i class="icon-user-2"></i>
                         <div class="header-userinfo">
-                            <span class="d-inline-block font2 line-height-1">Hello!</span>
-                            <h4 class="mb-0">My Account</h4>
+                            <a href="login.html" class="header-icon d-lg-block d-none">
+                            @guest
+                                @if (Route::has('login'))
+                                    {{-- <li class="nav-item"> --}}
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    </li>
+                                @endif
+
+                                @if (Route::has('register'))
+                                    {{-- <li class="nav-item"> --}}
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    </li>
+                                @endif
+                            @else
+                                {{-- <li class="nav-item dropdown"> --}}
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                                {{-- </li> --}}
+                            @endguest
                         </div>
                     </div>
                 </a>
@@ -158,13 +188,37 @@
                 <nav class="main-nav">
                     <ul class="menu">
                         <li class="">
-                            <a href="{{ route('products.create') }}">Home</a>
+                            <a href="/">Home</a>
                         </li>
-                        <li class="">
-                            <a href="{{ route('admin.index') }}">Admin</a>
-                        </li>
+                        @if ($userType  == 'admin' || $userType == 'member')
                         <li>
-                            <a href="{{ route('products.layout') }}">Categories</a>
+                            <a href="{{ route('admin.index') }}">Admin</a>
+                            <div class="megamenu megamenu-fixed-width megamenu-3cols">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <a href="#" class="nolink">Menu</a>
+                                        <ul class="submenu">
+                                            <li><a href="{{ route('admin.index') }}">Clothes</a></li>
+                                            <li><a href="{{ route('category.index') }}">Categories</a>
+                                            </li>
+                                            <li><a href="{{ route('banner.index') }}">
+                                                    Banner</a>
+                                            </li>
+                                            <li><a href="category.html">Left Sidebar</a></li>
+                                            <li><a href="category-sidebar-right.html">Right Sidebar</a></li>
+                                            <li><a href="category-off-canvas.html">Off Canvas Filter</a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div><!-- End .megamenu -->
+                        </li>
+                        @else
+                            
+                        @endif
+                        
+                        <li>
+                            <a href="">Categories</a>
                             <div class="megamenu megamenu-fixed-width megamenu-3cols">
                                 <div class="row">
                                     <div class="col-lg-4">

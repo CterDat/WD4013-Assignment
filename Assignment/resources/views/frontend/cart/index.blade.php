@@ -1,5 +1,5 @@
-@extends('layout.master')
-@section('frontend-product')
+@extends('layouts.app')
+@section('content')
     <?php $showBanner = false; ?>
     <main class="main">
         <div class="container">
@@ -96,10 +96,10 @@
                                     <tr>
                                         <form action="{{ route('cart.checkout') }}" method="POST">
                                             @csrf
-                                            <input type="hidden" value="{{ $value['image'] }}" name="image">
+                                            {{-- <input type="file" value="{{ $value['image'] }}" name="image"> --}}
                                             <input type="hidden" value="{{ $value['name'] }}" name="product_name">
                                             <input type="hidden" value="{{ $cart->getTotalPrice() }}" name="total">
-
+                                            {{-- <input type="hidden" value="{{ asset('storage/' . $value['image']) }}" name="image"> --}}
                                             {{-- @if ($value['image'])
                                             <img src="{{ asset('storage/' . $value['image']) }}" alt="Product Image"
                                                 width="80px" height="80px">

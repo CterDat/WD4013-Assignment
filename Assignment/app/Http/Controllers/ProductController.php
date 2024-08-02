@@ -15,8 +15,9 @@ class ProductController extends Controller
     public function index()
     {
         $listClothes = Product::query()->get();
-        // return view('');
-        return view('frontend.clothes.index', compact('listClothes'));
+        $listTop5 = Product::query()->take(4)->get();
+        $userType = auth()->user()->type;
+        return view('frontend.clothes.index', compact('listClothes', 'listTop5', 'userType'));
     }
     public function layout()
     {
@@ -26,9 +27,6 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $listTop5 = Product::query()->take(4)->get();
-        // return view('');
-        return view('frontend.clothes.top5', compact('listTop5'));
     }
 
     /**

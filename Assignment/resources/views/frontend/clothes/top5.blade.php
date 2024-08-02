@@ -1,5 +1,5 @@
-@extends('layout.master')
-@section('frontend-product')
+@extends('layouts.app')
+@section('content')
     <?php $showBanner = true; ?>
     <div class="row">
         @foreach ($listTop5 as $index => $cl)
