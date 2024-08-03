@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helper\Cart;
+use App\Models\Orderitem;
 use App\Models\Product;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -39,13 +40,19 @@ class CartController extends Controller
         DB::table('orders')->insert([
 
             'shipping' => $request->shipping,
-            'image' => $url,
             'city' => $request->city,
             'name' => $request->name,
             'product_name' => $request->product_name,
             'total' => $request->total,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
+        foreach ($request as $item) {
+            DB::table('orderitems')->insert([
+                'product_name' => $request->product_name,
+                'quantity' => $request->quantity,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s')
+            ]);
+        }
 
         Session::flush();
         return redirect()->route('cart.notification');

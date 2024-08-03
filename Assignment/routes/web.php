@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\BillController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Models\Banner;
 use App\Models\Product;
@@ -33,6 +35,11 @@ Route::resource('products', ProductController::class);
 Route::resource('admin', AdminController::class);
 Route::resource('category', CategoryController::class)->middleware('isAdmin');
 Route::resource('banner', BannerController::class);
+Route::resource('bill', BillController::class);
+Route::resource('order', OrderController::class);
+Route::post('/update-order-status', [OrderController::class, 'updateStatus'])->name('orders.update-status');
+
+
 
 Route::post('/add-cart', [CartController::class, 'add'])->name('cart.add');
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');

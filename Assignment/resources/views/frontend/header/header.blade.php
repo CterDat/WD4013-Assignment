@@ -59,6 +59,9 @@
                                     {{ Auth::user()->name }}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('order.index') }}">
+                                        My Bill
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -204,7 +207,7 @@
                                             <li><a href="{{ route('banner.index') }}">
                                                     Banner</a>
                                             </li>
-                                            <li><a href="category.html">Left Sidebar</a></li>
+                                            <li><a href="{{route('bill.index')}}">Bills</a></li>
                                             <li><a href="category-sidebar-right.html">Right Sidebar</a></li>
                                             <li><a href="category-off-canvas.html">Off Canvas Filter</a></li>
 

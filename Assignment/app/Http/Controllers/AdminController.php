@@ -16,7 +16,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $userType = auth()->user()->type;
+        $userType = auth()->check() ? auth()->user()->type : null;
         $listClothes = Product::query()->get();
         return view('admin.product.index', compact('listClothes', 'userType'));
     }

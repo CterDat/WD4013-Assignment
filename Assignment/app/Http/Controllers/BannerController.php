@@ -17,7 +17,7 @@ class BannerController extends Controller
     public function index()
     {
         $data = Banner::query()->get();
-        $userType = auth()->user()->type;
+        $userType = auth()->check() ? auth()->user()->type : null;
         return view('admin.banner.index', compact('data', 'userType'));
     }
 

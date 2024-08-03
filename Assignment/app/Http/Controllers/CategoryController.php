@@ -18,7 +18,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::query()->get();
-        $userType = auth()->user()->type;
+        $userType = auth()->check() ? auth()->user()->type : null;
         return view('admin.category.index', compact('categories', 'userType'));
     }
 

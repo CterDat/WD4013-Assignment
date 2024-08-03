@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <?php $showBanner = false; ?>
+    
     <main class="main">
         <div class="container">
             @if ($cart->isEmpty())
@@ -99,6 +100,7 @@
                                             {{-- <input type="file" value="{{ $value['image'] }}" name="image"> --}}
                                             <input type="hidden" value="{{ $value['name'] }}" name="product_name">
                                             <input type="hidden" value="{{ $cart->getTotalPrice() }}" name="total">
+                                            <input type="hidden" value="{{ $value['quantity'] }}" name="quantity">
                                             {{-- <input type="hidden" value="{{ asset('storage/' . $value['image']) }}" name="image"> --}}
                                             {{-- @if ($value['image'])
                                             <img src="{{ asset('storage/' . $value['image']) }}" alt="Product Image"

@@ -16,7 +16,7 @@ class ProductController extends Controller
     {
         $listClothes = Product::query()->get();
         $listTop5 = Product::query()->take(4)->get();
-        $userType = auth()->user()->type;
+        $userType = auth()->check() ? auth()->user()->type : null;
         return view('frontend.clothes.index', compact('listClothes', 'listTop5', 'userType'));
     }
     public function layout()

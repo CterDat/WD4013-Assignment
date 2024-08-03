@@ -142,4 +142,5 @@
             </div>
         </div>
     </div><!-- End .footer-bottom -->
+    @yield('scripts')
 </footer>
